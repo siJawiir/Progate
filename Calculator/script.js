@@ -63,11 +63,20 @@ const calculate = () => {
         case "/":
             result = parseFloat (prevNumber) / parseFloat(currentNumber) 
             break
+        case "%":
+            result = parseFloat (prevNumber) / 100 
+            break
         default:
         return
     }
     currentNumber = result
     calculationOperator = ''
+}
+
+const clearAll = () => {
+    prevNumber = ''
+    calculationOperator = ''
+    currentNumber = '0'
 }
 
 const clearBtn = document.querySelector('.all-clear')
